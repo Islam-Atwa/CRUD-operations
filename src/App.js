@@ -1,25 +1,28 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
+import React from 'react';
+
+
+// import All Components 
+import Home from './components/Home';
+import Create from './components/Create';
+// import Create from './components/Create';
+// import Edit from './components/Edit';
+// import array from '/components/array';
+
+
 import './App.css';
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h2>Crud App</h2>
+      {/* <Home /> */}
+      <Create/>
+      
     </div>
   );
 }
 
 export default App;
+
