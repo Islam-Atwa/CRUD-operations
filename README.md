@@ -1,4 +1,68 @@
-# Getting Started with Create React App
+# Steps to Build a CRUD Application in ReactJS
+
+## 1. Create Initial Data
+- Create a file named `array.js`.
+- Store the initial data that will be used in the application.
+
+---
+
+## 2. Create the Home Component
+- Displays the list of existing data.
+- Includes **Edit** and **Delete** buttons for each item.
+- Uses `map()` to render data dynamically.
+
+---
+
+## 3. Create the Create Component
+- Contains a form to add new data.
+- On submit:
+  - Updates the state using `useState`.
+  - Clears the input field.
+
+---
+
+## 4. Create the Edit Component
+- Contains a form to edit existing data.
+- Receives data via an ID or index parameter.
+- On submit, updates the state and re-renders the data.
+
+---
+
+## 5. Manage Local State with useState
+- Use `useState` in each component to manage local data.
+- Any change to the state automatically re-renders the UI.
+
+---
+
+## 6. Persist Data Using localStorage
+- On any change (Add, Update, Delete), save the data to `localStorage`.
+- On the first app load, retrieve data from `localStorage` if available.
+
+---
+
+## 7. Set Up Routing
+- Install the library:
+  ```bash
+  npm install react-router-dom
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -67,4 +131,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 ### `npm run build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify) -->
