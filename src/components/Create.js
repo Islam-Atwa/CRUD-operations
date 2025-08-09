@@ -1,6 +1,9 @@
 
-import Link from 'react-router-dom';
+import { useState } from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
+import { Link , useNavigate } from "react-router-dom";
+
+
 
 import { Button, Form } from 'react-bootstrap';
 
@@ -40,11 +43,11 @@ function Create(){
                     Submit
                 </Button>
 
-                <a className="d-grid gap-2" to="/" >
-                    <Button variant="info" size="lg" >
+                <Link to="/Home" className="d-grid gap-2" >
+                    <Button variant="info" size="lg">
                         Home
                     </Button>
-                </a>
+                </Link>
             </Form>
         </div>
 

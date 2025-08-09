@@ -1,5 +1,8 @@
 // import logo from './logo.svg';
 import React from 'react';
+import ReactDOM from "react-dom/client";
+
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 
 // import All Components 
@@ -17,8 +20,15 @@ function App() {
   return (
     <div className="App">
       <h2>Crud App</h2>
+      <Router>
+        <Routes>
+          <Route path="/Home" element={<Home/>} />
+          <Route path="/Create" element={<Create />}/>
+
+        </Routes>
+      </Router>
       {/* <Home /> */}
-      <Create/>
+      {/* <Create/> */}
       
     </div>
   );
