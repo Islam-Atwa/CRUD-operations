@@ -2,6 +2,8 @@
 import { useState } from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Link , useNavigate } from "react-router-dom";
+import Swal from 'sweetalert2';
+
 
 
 
@@ -9,6 +11,25 @@ import { Button, Form } from 'react-bootstrap';
 
 
 function Create(){
+
+    const [name, setName] = useState('');
+    const [age, setAge] = useState('');
+
+    const handelSubmit = (e)=>{
+        e.preventDefault();
+
+        if(name === '' || age === ''){
+            Swal.fire({
+                icon: 'error',
+                title: 'invalid input',
+                text: 'Please fill all fields!',
+            });
+            return;
+        }
+    }
+
+  
+
     return(
         <div>
             <Form className="d-grid gap-2"
@@ -37,6 +58,7 @@ function Create(){
                 </Form.Group>
 
                 <Button
+                    onClick={handelSubmit}
                     variant="primary"
                     type="submit"
                 >
