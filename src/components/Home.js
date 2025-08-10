@@ -10,12 +10,6 @@ import { Link, useNavigate } from "react-router-dom";
 
 
 function Home(){
-
-  
-
-
-      
-  
     return (
       <table class="table table-striped border-success">
         <thead>
