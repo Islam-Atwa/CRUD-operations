@@ -10,6 +10,14 @@ import { Link, useNavigate } from "react-router-dom";
 
 
 function Home(){
+  let history = useNavigate();
+
+
+  function setId(id, name, age){
+    localStorage.setItem("id", id);
+    localStorage.setItem("Name", name);
+    localStorage.setItem("Age", age);
+  }
     return (
       <table class="table table-striped border-success">
         <thead>
