@@ -37,12 +37,8 @@ function Create(){
         }
         array.push({ id: uni, Name: a, Age: b });
         history("/");
-
-
     }
-
-  
-
+    
     return(
         <div>
             <Form className="d-grid gap-2"

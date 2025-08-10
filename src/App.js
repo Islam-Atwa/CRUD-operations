@@ -22,8 +22,9 @@ function App() {
       <h2>Crud App</h2>
       <Router>
         <Routes>
+            <Route path="/" element={<Create />} />
+
           <Route path="/Home" element={<Home/>} />
-          <Route path="/Create" element={<Create />}/>
 
         </Routes>
       </Router>
