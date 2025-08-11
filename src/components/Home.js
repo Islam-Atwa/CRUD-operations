@@ -42,17 +42,6 @@ function Home(){
                 </tr>
               );
             })}
-            <tr>
-              <td>Moshrif</td>
-              <td>38</td>
-              <td>
-                <Link className='d-flex justify-content-center gap-2'>
-                  <Button variant="info" >Update</Button>
-                  <Button variant="danger" >Delete</Button>
-                </Link>
-              </td>
-            </tr>
-
           </tbody>
       </table>
       <div className="d-grid gap-2 mt-4">

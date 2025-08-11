@@ -72,14 +72,18 @@ function Create(){
                     />
                 </Form.Group>
 
-                <Button
-                    onClick={(e) => handelSubmit(e)}
+                <Link to="/Home" className="d-grid gap-2">
+                    <Button
+                        onClick={(e) => handelSubmit(e)}
 
-                    variant="primary"
-                    type="submit"
-                >
-                    Submit
-                </Button>
+                        variant="primary"
+                        type="submit"
+                        
+                        >
+                        Submit
+                    </Button>
+                    
+                </Link>
 
                 <Link to="/Home" className="d-grid gap-2" >
                     <Button variant="info" size="lg">
