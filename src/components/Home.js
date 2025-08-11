@@ -15,6 +15,19 @@ function Home(){
     localStorage.setItem("Name", name);
     localStorage.setItem("Age", age);
   }
+  function deleted(id) {
+        let index = array
+            .map(function (e) {
+                return e.id;
+            })
+            .indexOf(id);
+
+        // Deleting the entry with the specified index
+        array.splice(index, 1);
+
+        // Redirecting to the same page to re-render
+        history("/");
+    }
     return (
       <>
         <table className="table table-striped border-success">
