@@ -1,14 +1,44 @@
 
 import { useState } from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
+import array from "./array";
+
 import { Link , useNavigate } from "react-router-dom";
-
-
+import Swal from 'sweetalert2';
+import { v4 as uuidv4 } from 'uuid';
 
 import { Button, Form } from 'react-bootstrap';
 
 
 function Create(){
+
+    const [name, setName] = useState('');
+    const [age, setAge] = useState('');
+
+    let history = useNavigate();
+
+
+
+    const handelSubmit = (e)=>{
+        e.preventDefault();
+
+        const ids = uuidv4();
+        let uni = ids.slice(0, 8);
+
+        let a = name, b = age;
+
+        if(name === '' || age === ''){
+            Swal.fire({
+                icon: 'error',
+                title: 'invalid input',
+                text: 'Please fill all fields!',
+            });
+            return;
+        }
+        array.push({ id: uni, Name: a, Age: b });
+        history("/");
+    }
+    
     return(
         <div>
             <Form className="d-grid gap-2"
@@ -19,8 +49,11 @@ function Create(){
                     controlId="formBasicName"
                 >
                     <Form.Control
+                        onChange={(e)=>
+                            setName(e.target.value)
+                        }
                         type="text"
-                        placeholder="Enter Name"
+                        placeholder="Enter Name "
                         required
                     />
                 </Form.Group>
@@ -30,18 +63,27 @@ function Create(){
                     controlId="formBasicName"
                 >
                     <Form.Control
+                        onChange={(e)=>
+                            setAge(e.target.value)
+                        }
                         type="number"
                         placeholder="Age"
                         required
                     />
                 </Form.Group>
 
-                <Button
-                    variant="primary"
-                    type="submit"
-                >
-                    Submit
-                </Button>
+                <Link to="/Home" className="d-grid gap-2">
+                    <Button
+                        onClick={(e) => handelSubmit(e)}
+
+                        variant="primary"
+                        type="submit"
+                        
+                        >
+                        Submit
+                    </Button>
+                    
+                </Link>
 
                 <Link to="/Home" className="d-grid gap-2" >
                     <Button variant="info" size="lg">

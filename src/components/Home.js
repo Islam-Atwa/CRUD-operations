@@ -1,19 +1,19 @@
 import React from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
 // import "bootstrap/dist/css/bootstrap.min.js";
-import Table from 'react-bootstrap/Table';
-import { Form, Button } from 'react-bootstrap';
+import { Form, Button, Table } from 'react-bootstrap';
 import { Link, useNavigate } from "react-router-dom";
-
+import array from './array';
 
 function Home(){
+
   let history = useNavigate();
 
-
   function setId(id, name, age){
-    localStorage.setItem("id", id);
+    localStorage.setItem("ID", id);
     localStorage.setItem("Name", name);
     localStorage.setItem("Age", age);
+    
   }
   function deleted(id) {
         let index = array
@@ -39,7 +39,7 @@ function Home(){
             </tr>
           </thead>
           <tbody>
-            {Array.map((item, index)=>{
+            {array.map((item, index)=>{
               return (
                 <tr key={index}>
 
@@ -54,17 +54,6 @@ function Home(){
                 </tr>
               );
             })}
-            <tr>
-              <td>Moshrif</td>
-              <td>38</td>
-              <td>
-                <Link className='d-flex justify-content-center gap-2'>
-                  <Button variant="info" >Update</Button>
-                  <Button variant="danger" >Delete</Button>
-                </Link>
-              </td>
-            </tr>
-
           </tbody>
       </table>
       <div className="d-grid gap-2 mt-4">
