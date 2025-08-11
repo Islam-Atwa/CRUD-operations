@@ -5,6 +5,8 @@ import { Form, Button, Table } from 'react-bootstrap';
 import { Link, useNavigate } from "react-router-dom";
 import array from './array';
 
+
+
 function Home(){
 
   let history = useNavigate();
@@ -12,16 +14,40 @@ function Home(){
   function setId(id, name, age){
     localStorage.setItem("ID", id);
     localStorage.setItem("Name", name);
-    localStorage.setItem("Age", age);
-    
+    localStorage.setItem("Age", age); 
   }
+
+
+
+
   function deleted(id){
-    let index = array.map(function(Item){
-      return Item.id;
+    
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        let index = array.map(function(Item){
+          return Item.id;
+        })
+        .indexOf(id);
+        array.splice(index, 1);
+            history("/");
+
+        
+        Swal.fire(
+          'Deleted!',
+          'Your file has been deleted.',
+          'success'
+        )
+      }
     })
-    .indexOf(id);
-    array.splice(index, 1);
-    history("/");
+
   }
 
     return (
