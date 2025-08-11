@@ -15,7 +15,15 @@ function Home(){
     localStorage.setItem("Age", age);
     
   }
-    
+  function deleted(id){
+    let index = array.map(function(Item){
+      return Item.id;
+    })
+    .indexOf(id);
+    array.splice(index, 1);
+    history("/");
+  }
+
     return (
       <>
         <table className="table table-striped border-success">
@@ -36,7 +44,12 @@ function Home(){
                   <td>
                     <Link className='d-flex justify-content-center gap-2'>
                       <Button variant="info" >Update</Button>
-                      <Button variant="danger" >Delete</Button>
+                      <Button
+                      onClick={()=> deleted(item.id)}
+                       variant="danger"
+                        >
+                        Delete
+                        </Button>
                     </Link>
                   </td>
                 </tr>
