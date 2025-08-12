@@ -7,7 +7,6 @@ import array from './array';
 import Swal from 'sweetalert2';
 
 
-
 function Home(){
 
   let history = useNavigate();
@@ -17,9 +16,6 @@ function Home(){
     localStorage.setItem("Name", name);
     localStorage.setItem("Age", age); 
   }
-
-
-
 
   function deleted(id){
     
