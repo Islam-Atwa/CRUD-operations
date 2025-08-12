@@ -4,6 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Form, Button, Table } from 'react-bootstrap';
 import { Link, useNavigate } from "react-router-dom";
 import array from './array';
+import Swal from 'sweetalert2';
 
 
 
