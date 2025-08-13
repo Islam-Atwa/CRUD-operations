@@ -1,6 +1,9 @@
 
 
 import "bootstrap/dist/css/bootstrap.min.css";
+import { Link , useNavigate } from "react-router-dom";
+import { Button, Form } from 'react-bootstrap';
+
 
 function Edit(){
     return (
@@ -32,13 +35,11 @@ function Edit(){
                     />
                 </Form.Group>
 
-                <Button
-                    variant="primary"
-                    type="submit"
-                    size="lg"
-                >
-                    Update
-                </Button>
+                <Link to="/Edit" className="d-grid gap-2">
+                    <Button variant="primary" size="lg">
+                        Update
+                    </Button>
+                </Link>
 
                 <Link className="d-grid gap-2" to="/">
                     <Button variant="warning" size="lg">
