@@ -5,6 +5,8 @@ import { Form, Button, Table } from 'react-bootstrap';
 import { Link, useNavigate } from "react-router-dom";
 import array from './array';
 import Swal from 'sweetalert2';
+import { useState } from 'react';
+
 
 
 
@@ -52,9 +54,9 @@ function Home(){
   }
 
     return (
-      <>
-        <table className="table table-striped border-success">
-          <thead>
+      <div style={{marginTop:"8rem",marginBottom:"0", marginLeft:"8rem", marginRight:"8rem"}}>
+        <Table striped bordered hover responsive className="shadow-sm">
+          <thead className="thead-dark">
             <tr>
               <th>Name</th>
               <th>Age</th>
@@ -69,21 +71,30 @@ function Home(){
                   <td>{item.Name}</td>
                   <td>{item.Age}</td>
                   <td>
-                    <Link className='d-flex justify-content-center gap-2'>
-                      <Button variant="info" >Update</Button>
+                    <Link to={'/edit'}>
+
+                    <Button
+
+                      onClick={() => setId(item.id, item.Name, item.Age)}
+                      variant="info"
+                      className="me-2"
+                      >
+                      Update
+                    </Button>
+                    </Link>
+                     
                       <Button
                       onClick={()=> deleted(item.id)}
                        variant="danger"
                         >
                         Delete
                         </Button>
-                    </Link>
                   </td>
                 </tr>
               );
             })}
           </tbody>
-      </table>
+      </Table>
       <div className="d-grid gap-2 mt-4">
 
         <Link to="/">
@@ -93,9 +104,7 @@ function Home(){
         </Link>
       </div>
       
-      </>
-    // <div className="container">    
-
+      </div>
     );
 }
 

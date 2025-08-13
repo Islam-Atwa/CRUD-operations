@@ -42,7 +42,7 @@ function Create(){
     return(
         <div>
             <Form className="d-grid gap-2"
-            style={{margin:"5rem"}}
+            style={{margin:'12rem'}}
             >
                 <Form.Group
                     className="mb-3"
